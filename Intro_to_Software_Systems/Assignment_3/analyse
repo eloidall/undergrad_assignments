@@ -1,0 +1,106 @@
+#!/bin/bash
+
+# Author: Éloi Dallaire
+# McGill Student ID: 260794674
+
+
+# 1. avg
+if [ "$1" = "avg" ]; then
+        # Check 1 additional argument
+        if [ $# -ne 2 ]; then
+                echo "Error: Expected one additional input parameter."
+                echo "Usage: ./analyse avg <country>"
+                exit 2
+        fi
+	
+	country="$2"
+    	# AWK script for avg 
+    	awk_script=$(cat << 'EOF'
+    	BEGIN {
+        	FS = ","
+       		total = 0
+        	count = 0
+    	}
+    	$4 == country {
+        	total += $8
+        	count++
+    	}
+   	END {
+        	print int(total / count)
+    	}
+EOF
+)
+	avg_pop=$(echo "$awk_script" | awk -v country="$country" -f - worldcities.csv)
+	echo "$avg_pop"
+
+
+# 2. total
+elif [ "$1" = "total" ]; then
+        # Check 1 additional argument
+        if [ $# -ne 2 ]; then
+                echo "Error: Expected one additional input parameter."
+                echo "Usage: ./analyse total <country>"
+                exit 3
+        fi
+
+	country="$2"
+        # AWK script for total
+        awk_script=$(cat << 'EOF'
+	BEGIN {
+                FS = ","
+                total = 0
+        }
+        $4 == country {
+                total += $8
+        }
+        END {
+                print total
+        }
+EOF
+)
+	total_pop=$(echo "$awk_script" | awk -v country="$country" -f - worldcities.csv)
+    	echo "$total_pop"
+
+
+
+# 3. diff
+elif [ "$1" = "diff" ]; then
+        # Check 2 additional arguments
+        if [ $# -ne 3 ]; then
+                echo "Error: Expected two additional input parameter."
+                echo "Usage: ./analyse diff <city1> <city2>"
+                exit 4
+        fi
+
+	city1="$2"
+	city2="$3"	
+        # AWK script for diff
+	awk_script=$(cat << 'EOF'
+	BEGIN {
+		FS = ","
+		pop_city1 = 0
+		pop_city2 = 0
+	}
+	$1 == city1 {
+		pop_city1 = $8
+	}
+	$1 == city2 {
+		pop_city2 = $8
+	}
+	END {
+		print pop_city1 - pop_city2
+	}
+EOF
+)
+	diff_pop=$(echo "$awk_script" | awk -v city1="$city1" -v city2="$city2" -f - worldcities.csv)
+	echo "$diff_pop"
+
+
+# Invalid 1st argument
+else
+        echo "Error: Invalid task specified. Supported tasks: avg, total, diff."
+        echo "Usage: ./analyse <task> <additional_arguments>"
+        exit 1
+fi
+
+
