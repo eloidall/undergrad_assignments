@@ -723,37 +723,7 @@ for feature in X_categorical.columns:
     plt.title(f'{feature} Distribution Across Clusters')
     plt.show()
 '''
-''' NOTES: 
-        'created_at', 'launched_at', 'created_at_yr', 'launched_at_yr': 
-                cluster (1): older projects
-        
-        'launched_at_day', 'created_at_day':
-                cluster (3): later in the month
-                cluster(0): a bit earlier in the month
-                
-        'launched_at_month', 'created_at_month':
-                cluster(2): projects launched/created earlier in the year
-                
-                
-        
-        MAYBE???        
-        'static_usd_rate': 
-                cluster (1): projects with higher usd rate
-        
-        
-        'created_to_launch_days':
-                cluster (1): shorter period
-        'blurb_len', 'blurb_len_clean': 
-                cluster (1): no outliers on the upper bound
-                
-        'currency_GBP', 'country_GB':
-                cluster(1): all the successful projects are in this cluster
-                
-        'launched_at_weekday_Monday': 
-                cluster(2): 100% successful projects in this cluster
-                cluster(0-2): 100% of the successful projects between those 2 clusters
-    
-'''
+
 
 # To analyze relationship between features (by clusters)
 '''
