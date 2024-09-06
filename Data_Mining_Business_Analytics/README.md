@@ -10,11 +10,8 @@ This project aims to predict the success or failure of Kickstarter campaigns usi
 
 ## Project Files
 
-- **`Kickstarter-Analysis.ipynb`**: Jupyter Notebook with all data exploration, preprocessing, model development, and evaluation steps.
+- **`final-model.py`**: Jupyter Notebook with all data exploration, preprocessing, model development, and evaluation steps.
 - **`kickstarter_data.xlsx`**: Dataset containing Kickstarter project information used in the analysis.
-- **`classification_model.py`**: Python script with the final classification model for predicting project success.
-- **`clustering_model.py`**: Python script with the final clustering analysis.
-- **`Kickstarter-Grading.py`**: Script to test the classification model's performance on a future grading dataset (`Kickstarter-Grading.xlsx`).
 - **`README.md`**: This file containing an overview of the project, file structure, and instructions for running the code.
 
 ## Steps in the Analysis
@@ -47,33 +44,6 @@ This project aims to predict the success or failure of Kickstarter campaigns usi
 - Projects flagged as `staff_pick` and projects in categories like `Web` and `Software` have higher success rates.
 - Clusters revealed insights about launch times and project characteristics, with some clusters showing better success rates during specific times or regions.
 
-## Instructions for Running the Code
-
-1. **Install Required Libraries**:
-   - Ensure you have Python 3.x installed.
-   - Install the required libraries using:
-     ```bash
-     pip install -r requirements.txt
-     ```
-
-2. **Run the Classification Model**:
-   - Use the `classification_model.py` script to train and evaluate the classification model:
-     ```bash
-     python classification_model.py
-     ```
-
-3. **Run the Clustering Model**:
-   - Run the `clustering_model.py` script to generate clusters from the data:
-     ```bash
-     python clustering_model.py
-     ```
-
-4. **Grading Script**:
-   - Use the `Kickstarter-Grading.py` script to test your classification model with a new grading dataset:
-     ```bash
-     python Kickstarter-Grading.py
-     ```
-
 ## Results
 
 - **Final Classification Accuracy**: 75% on the test data using Gradient Boosting.
@@ -83,7 +53,3 @@ This project aims to predict the success or failure of Kickstarter campaigns usi
 
 - Further refinement of clustering techniques to improve cohesion and separation.
 - Implementation of real-time monitoring for live Kickstarter campaigns.
-
----
-
-This `README.md` file provides a clear and organized summary of your project, with instructions for using the scripts, key insights, and future directions.
