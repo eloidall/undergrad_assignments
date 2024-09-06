@@ -6,9 +6,10 @@ This project explores car risk prediction using a **Gradient Boosting Machine (G
 
 ## Project Files
 
-- **`car_risk_analysis.ipynb`**: Jupyter Notebook containing the full workflow, including data preprocessing, exploratory data analysis, model building, and evaluation.
-- **`automobile_dataset.csv`**: The dataset used for the project, featuring car specifications and risk levels.
-- **`project_report.pdf`**: The final written report detailing the analysis, results, and recommendations for future improvements.
+- **`final_model.R`**: Python file containing the full workflow, including data preprocessing, exploratory data analysis, model building, and evaluation.
+- **`Automobile data.csv`**: The dataset used for the project, featuring car specifications and risk levels.
+- **`Written_report.pdf`**: The final written report detailing the analysis, results, and recommendations for future improvements.
+-  **`Final Project Fall 2023.pdf`**: Guidelines and requirements regarding how to build the model.
 
 ## Steps in the Analysis
 
