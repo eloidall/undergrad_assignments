@@ -6,7 +6,7 @@ This project aims to predict the success or failure of Kickstarter campaigns usi
 
 ## Project Files
 
-- **`final-model.py`**: Jupyter Notebook with all data exploration, preprocessing, model development, and evaluation steps.
+- **`final_model.py`**: Jupyter Notebook with all data exploration, preprocessing, model development, and evaluation steps.
 - **`Kickstarter.xlsx`**: Dataset containing Kickstarter project information used in the analysis.
 - **`Project_guidelines.pdf`**: This file contains an overview of the project, file structure, and requirements for building models.
 
