@@ -1,7 +1,3 @@
-Here's a concise `README.md` file for your project:
-
----
-
 # Kickstarter Campaign Success Prediction
 
 ## Project Overview
